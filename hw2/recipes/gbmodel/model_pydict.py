@@ -6,7 +6,7 @@ from .Model import Model
 
 class model(Model):
     def __init__(self):
-        self.recipes = {{'recipe':lasagna, 'ingredients':olives+noodles+sauce+tomatoes, 'reviews':its okay, 'time to cook'10_minutes},{'recipe':peanut butter w/ jelly, 'ingredients':bread+peanut butter+jelly, 'reviews':its a classic!, 'time to cook'5_minutes}}
+        self.recipes = {{'recipe':lasagna, 'ingredients':olives+noodles+sauce+tomatoes, 'reviews':its okay, 'time_to_cook':10_minutes},{'recipe':peanut butter w/ jelly, 'ingredients':bread+peanut butter+jelly, 'reviews':its a classic, 'time_to_cook':10_minutes}}
 
     def select(self):
         """
@@ -25,6 +25,6 @@ class model(Model):
 	:param time_to_cook: String
         :return: True
         """
-        params = {'recipe':recipe, 'ingredients':ratings, 'reviews':reviews, 'time to cook':time_to_cook}
+        params = {'recipe':recipe, 'ingredients':ratings, 'reviews':reviews, 'time_to_cook':time_to_cook}
         self.recipes.append(params)
         return True
