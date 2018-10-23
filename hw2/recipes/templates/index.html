@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Recipes</h2>
+
+    <h3>Sign <a href="{{ url_for('sign') }}">here</a></h3>
+    <h3>Entries</h3>
+    {% for entry in entries %}
+        <p class=entry>
+            {{ entry.recipe }} &lt;{{ entry.ingredients }} &lt;{{ entry.reviews }} &lt;{{ entry.time_to_cook }}&gt;
+	    <br>signed on {{ entry.signed_on }}<br>
+	    {{ entry.message }}
+        </p>
+    {% endfor %}
+
+{% endblock %}
