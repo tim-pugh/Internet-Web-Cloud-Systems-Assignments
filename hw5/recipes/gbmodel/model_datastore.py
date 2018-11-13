@@ -24,19 +24,19 @@ def from_datastore(entity):
         [Entity{key: (kind, id), prop: val, ...}]
 
     This returns:
-        [ name, email, date, message ]
-    where name, email, and message are Python strings
-    and where date is a Python datetime
+        [ recipe, ingredients, reviews, time_to_cook ]
+    where recipe, ingredients, reviews, and time_to_cook are Python strings
+
     """
     if not entity:
         return None
     if isinstance(entity, list):
         entity = entity.pop()
-    return [entity['name'],entity['email'],entity['date'],entity['message']]
+    return [entity['recipe'],entity['ingredients'],entity['reviews'],entity['time_to_cook']]
 
 class model(Model):
     def __init__(self):
-        self.client = datastore.Client('YOUR_PROJECT_ID')
+        self.client = datastore.Client('cs410c-tim-pugh3')
 
     def select(self):
         query = self.client.query(kind = 'Review')
@@ -47,10 +47,10 @@ class model(Model):
         key = self.client.key('Review')
         rev = datastore.Entity(key)
         rev.update( {
-            'name': name,
-            'email' : email,
-            'date' : datetime.today(),
-            'message' : message
+            'recipe': recipe,
+            'ingredients' : ingredients,
+            'reviews' : reviews,
+            'time_to_cook' : time_to_cook
             })
         self.client.put(rev)
         return True
