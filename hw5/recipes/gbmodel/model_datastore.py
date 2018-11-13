@@ -36,15 +36,15 @@ def from_datastore(entity):
 
 class model(Model):
     def __init__(self):
-        self.client = datastore.Client('cs410c-tim-pugh3')
+        self.client = datastore.Client('cs410c-tim-pugh2')
 
     def select(self):
-        query = self.client.query(kind = 'Review')
+        query = self.client.query(kind = 'datastore')
         entities = list(map(from_datastore,query.fetch()))
         return entities
 
     def insert(self,name,email,message):
-        key = self.client.key('Review')
+        key = self.client.key('datastore')
         rev = datastore.Entity(key)
         rev.update( {
             'recipe': recipe,
