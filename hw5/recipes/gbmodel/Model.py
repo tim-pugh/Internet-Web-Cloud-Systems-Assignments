@@ -1,12 +1,12 @@
 class Model():
     def select(self):
         """
-        Gets all recipes from the database
+        Gets all entries from the database
         :return: Tuple containing all rows of database
         """
         pass
 
-    def insert(self, recipe, ingredients, reviews, time_to_cook):
+    def insert(self, name, email, message):
         """
         Inserts entry into database
         :param name: String
