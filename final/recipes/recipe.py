@@ -4,7 +4,7 @@ import gbmodel
 
 class Recipe(MethodView):
     def get(self):
-        return render_template('recipe.html')
+        return render_template('recipes.html')
 
     def post(self):
         """
