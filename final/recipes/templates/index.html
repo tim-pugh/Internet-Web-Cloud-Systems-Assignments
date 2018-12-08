@@ -7,8 +7,6 @@
     {% for entry in entries %}
         <p class=entry>
             {{ entry.recipe }} &lt;{{ entry.ingredients }} &lt;{{ entry.reviews }} &lt;{{ entry.time_to_cook }}&gt;
-        <br>signed on {{ entry.signed_on }}<br>
-        {{ entry.message }}
         </p>
     {% endfor %}
 
