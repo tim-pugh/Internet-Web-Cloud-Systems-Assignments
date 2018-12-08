@@ -15,6 +15,18 @@
 from .Model import Model
 from datetime import datetime
 from google.cloud import datastore
+from google.cloud import translate
+import six
+
+def translate_text(text):
+    """Translates text into the target language"""
+    translate_client = translate.Client()
+
+    if isinstance(text, six.binary_type):
+        text = text.decode('utf-8')
+
+        result = translate_client.translate(text, target_language='es')
+        return result['translatedText']
 
 def from_datastore(entity):
     """Translates Datastore results into the format expected by the
