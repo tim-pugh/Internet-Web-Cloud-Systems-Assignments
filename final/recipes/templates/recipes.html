@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Recipes</h2>
+    <form action="{{ url_for('recipes') }}" method=post>
+	<p class="heading">Recipe: <input type=text name=recipe>
+	<p class="heading">Ingredients: <input type=text name=ingredients>
+    <p class="heading">Reviews: <input type=text name=reviews>
+	<p class="heading">Time to cook: <input type=text name=time_to_cook></p>
+	<p><input type=submit value=Recipe></p>
+    </form>
+{% endblock %}
