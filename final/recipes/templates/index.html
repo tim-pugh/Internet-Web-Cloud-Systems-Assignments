@@ -6,7 +6,7 @@
     <h3>Entries</h3>
     {% for entry in entries %}
         <p class=entry>
-            {{ entry.recipe }} &lt;{{ entry.ingredients }} &lt;{{ entry.reviews }} &lt;{{ entry.time_to_cook }}&gt;
+           <br> Recipe: {{ entry.recipe }} <br>&lt; <br>Ingredients: {{ entry.ingredients }} &lt;<br> Reviews: {{ entry.reviews }} &lt; <br> Time to cook: {{ entry.time_to_cook }}&gt;
         </p>
     {% endfor %}
 
